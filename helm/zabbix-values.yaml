@@ -1,0 +1,25 @@
+zabbixWeb:
+  service:
+    type: LoadBalancer
+    port: 10000
+    targetPort: 8080
+  # 关键修复：增加启动探针延迟，给 PHP-FPM 更多初始化时间
+  readinessProbe:
+    initialDelaySeconds: 60
+    periodSeconds: 10
+  livenessProbe:
+    initialDelaySeconds: 120
+    periodSeconds: 15
+  # 环境变量确保连接
+  env:
+    - name: ZBX_SERVER_HOST
+      value: "zabbix-zabbix-server"
+    - name: ZBX_SERVER_PORT
+      value: "10051"
+  externalDatabase:
+    host: "192.168.112.136"
+    user: "zabbix"
+    password: "zabbix_pass"
+    database: "zabbix"
+  tolerations:
+  - operator: "Exists"
