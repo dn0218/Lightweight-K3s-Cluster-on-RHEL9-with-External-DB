@@ -34,4 +34,21 @@ This project demonstrates the deployment of a highly secure and decoupled infras
    helm install zabbix zabbix-community/zabbix -f helm/zabbix-values.yaml --namespace zabbix --create-namespace
    ```
    Access Zabbix: Open http://<Node_IP>:10000 (Default: Admin/zabbix_pass).
+## Zabbix Dashboard
+
+<img width="1616" height="527" alt="image" src="https://github.com/user-attachments/assets/1bc27633-766b-45da-b4ec-a334b0df9040" />
+
+## K8s resources preview
+
+<img width="976" height="247" alt="image" src="https://github.com/user-attachments/assets/3e290f8b-922d-42c5-b555-9084cdacf68f" />
+
+## LoadBalancer
+
+<img width="982" height="122" alt="image" src="https://github.com/user-attachments/assets/f88c8185-1616-4d0d-803e-755a00f829cd" />
+
+## SELinux & Firewalld
+
+<img width="962" height="346" alt="image" src="https://github.com/user-attachments/assets/c3200745-6119-4bb5-a528-fa03b89201c3" />
+
+
    
